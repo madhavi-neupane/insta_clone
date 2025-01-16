@@ -1,0 +1,23 @@
+/* Post.css */
+.post {
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.post h4 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.post p {
+    color: #555;
+}

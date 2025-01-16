@@ -1,0 +1,11 @@
+.navbar {
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar h2 {
+    color: #262626;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+}
