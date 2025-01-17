@@ -1,31 +1,34 @@
 import React from 'react'
-import Nav from './Nav'
 import Stories from './Stories'
-import Post from './Post'
+import Feed from './Feed'
 import './FeedLayout.css'
 
 const FeedLayout = () => {
   return (
     <div className="feed-container">
-      {/* left side */}
-      <div className="fixed-sidebar">
-        <Nav />
+      <div className="middle-section">
+        {/* story */}
+        <div className="story-section">
+          <Stories />
+        </div>
+
+        {/* post */}
+        <div className="post-section">
+          <Feed />
+        </div>
       </div>
 
-      {/* middle side */}
-      <div className="feed-section">
-        <Stories />
-        <Post />
-      </div>
-
-      {/* right side */}
-      <div className="follow-section">
-        <h1>suggestions for you</h1>
-        <ul>
-          <li>user_1</li>
-          <li>user_2</li>
-          <li>user_3</li>
-        </ul>
+      <div className="end-section">
+        {/* follow / suggestion */}
+        <div className="follow-section">
+          <h1>Suggested for you</h1>
+          {/* Dummy suggestions */}
+          <ul>
+            <li>user_1</li>
+            <li>user_2</li>
+            <li>user_3</li>
+          </ul>
+        </div>
       </div>
     </div>
   )
