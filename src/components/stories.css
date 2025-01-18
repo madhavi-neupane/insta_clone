@@ -31,3 +31,33 @@
     display: none;
     /* Hide scrollbar for better UX */
 }
+
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #f09433;
+    object-fit: cover;
+}
+
+.story-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1000;
+}
+
+.story-image {
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}

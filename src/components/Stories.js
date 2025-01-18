@@ -1,11 +1,7 @@
-import React, { useState } from 'react'
+import React, { Profiler, useState } from 'react'
 import './stories.css'
-import nobitaImage from '../assets/nobita.jpg'
-import diceImage from '../assets/dice.jpg'
-import elephantImage from '../assets/elephant.jpg'
-import girlImage from '../assets/girl.png'
 
-const Stories = () => {
+const Stories = ({ stories = [] }) => {
   const [currentStory, setCurrentStory] = useState(null)
   const [timer, setTimer] = useState(null)
 
@@ -14,37 +10,48 @@ const Stories = () => {
     setTimer(5)
   }
 
-  const storyData = [
-    {
-      id: 1,
-      username: 'maddy',
-      imageUrl: nobitaImage,
-    },
-    {
-      id: 2,
-      username: 'john',
-      imageUrl: diceImage,
-    },
-    {
-      id: 3,
-      username: 'beanie',
-      imageUrl: elephantImage,
-    },
-    {
-      id: 4,
-      username: 'meowtoon',
-      imageUrl: girlImage,
-    },
-  ]
+  const handleClosesStory = () => {
+    setCurrentStory(null)
+    clearTimeout(timer)
+  }
+
+  React.useEffect(() => {
+    if (currentStory && timer > 0) {
+      const countdown = setTimeout(() => setTimer(timer - 1), 1000)
+      return () => clearTimeout(countdown)
+    } else if (timer == 0) {
+      handleClosesStory()
+    }
+  }, [currentStory, timer])
 
   return (
     <div className="stories">
-      {storyData.map((story) => (
-        <div className="story" key={story.id}>
-          <img src={story.imageUrl} alt={`${story.username}'s story`} />
+      {/* displayed stories */}
+      {stories.map((story) => (
+        <div
+          className="story"
+          key={story.id}
+          onClick={() => handleClick(story)}
+        >
+          <img
+            src={story.ProfilePicture}
+            alt={`${story.username}'s profile`}
+            className="profile-picture"
+          />
           <p>{story.username}</p>
         </div>
       ))}
+
+      {/* viewed stories */}
+      {currentStory && (
+        <div className="story-viewer" onClick={handleClosesStory}>
+          <img
+            src={currentStory.imageUrl}
+            alt={`${currentStory.username}'s story`}
+            className="story-image"
+          />
+        </div>
+      )}
     </div>
   )
 }
