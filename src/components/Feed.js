@@ -33,6 +33,30 @@ const storyData = [
     ProfilePicture: elephantImage,
     imageUrl: diceImage,
   },
+  {
+    id: 5,
+    username: 'baddy',
+    ProfilePicture: nobitaImage,
+    imageUrl: diceImage,
+  },
+  {
+    id: 6,
+    username: 'johnie',
+    ProfilePicture: doraemonImage,
+    imageUrl: elephantImage,
+  },
+  {
+    id: 7,
+    username: 'bean',
+    ProfilePicture: girlImage,
+    imageUrl: girlImage,
+  },
+  {
+    id: 8,
+    username: 'meow_cat',
+    ProfilePicture: elephantImage,
+    imageUrl: diceImage,
+  },
 ]
 
 function Feed() {
@@ -45,6 +69,11 @@ function Feed() {
           username="john_doe"
           imageUrl="doraemon"
           caption="cat Robot or just robot?"
+        />
+        <Post
+          username="meow-toon"
+          imageUrl="girl"
+          caption="enjoy beautiful life <3"
         />
       </div>
     </div>

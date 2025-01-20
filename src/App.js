@@ -30,12 +30,10 @@ function App() {
 
         {/* feed section */}
         <div className="feed-section">
-          <div className="post-section">
-            <Routes>
-              <Route path="/" element={<FeedLayout />}></Route>
-              <Route path="profile" element={<Profile />}></Route>
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/" element={<FeedLayout />}></Route>
+            <Route path="profile" element={<Profile />}></Route>
+          </Routes>
         </div>
       </Router>
     </div>

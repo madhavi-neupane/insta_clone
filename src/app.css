@@ -1,7 +1,7 @@
 .main-container {
     display: flex;
     flex-direction: row;
-    /* max-width: 1400px; */
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
+    width: 20%;
     height: 100%;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -17,13 +17,8 @@
 .feed-section {
     display: flex;
     flex-direction: row;
-    margin-left: 350px;
+    margin-left: 22%;
     width: 100%;
-}
-
-.post-section {
-    width: 75%;
-    border-radius: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .fixed-side-container a {
