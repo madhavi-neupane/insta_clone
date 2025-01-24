@@ -57,6 +57,18 @@ const storyData = [
     ProfilePicture: elephantImage,
     imageUrl: diceImage,
   },
+  {
+    id: 9,
+    username: 'beansi',
+    ProfilePicture: girlImage,
+    imageUrl: girlImage,
+  },
+  {
+    id: 10,
+    username: 'meow_kitten',
+    ProfilePicture: elephantImage,
+    imageUrl: diceImage,
+  },
 ]
 
 function Feed() {

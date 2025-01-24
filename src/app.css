@@ -27,3 +27,29 @@
     text-decoration: none;
     text-transform: capitalize;
 }
+
+.fixed-side-container nav {
+    margin: 0 12px;
+}
+
+.insta-text {
+    height: 120px;
+}
+
+.side-nav {
+    display: flex;
+    padding-left: 24px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.side-nav:hover {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.034);
+}
+
+.side-nav a {
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+}

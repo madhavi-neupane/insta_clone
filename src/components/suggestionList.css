@@ -1,0 +1,36 @@
+.suggestion-content {
+    padding-left: 50px;
+}
+
+.suggestion-content h4 {
+    color: rgba(0, 0, 0, 0.500);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.suggestion-content ul {
+    list-style: none;
+}
+
+.suggestion-content li {
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.suggestion-content img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.207);
+}
+
+.suggestion-content button {
+    color: rgb(88, 88, 218);
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+}
