@@ -1,9 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+
+    if (email == 'test@email.com' && password == 'password') {
+      localStorage.setItem('token', 'dummyToken')
+      navigate('/')
+    } else {
+      alert('Invalid Creds')
+    }
+  }
+
   return (
-    <div>
-      <h1>login</h1>
+    <div className="login-container">
+      <h2>Login</h2>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="your email here"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <p>
+        Don't have account ? <a href="/signup">Signup</a>
+      </p>
     </div>
   )
 }
