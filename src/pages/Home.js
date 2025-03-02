@@ -1,12 +1,13 @@
 import React from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
-import FeedLayout from '../components/FeedLayout'
-import Profile from './Profile'
+// import FeedLayout from '../components/FeedLayout'
+// import Profile from './Profile'
 import instaText from '../assets/instagram-logo-illustration.png'
 import homeIcon from '../svg/home.svg'
 import profileIcon from '../svg/profile.svg'
 import logoutIcon from '../svg/logout.svg'
+import MobileView from './MobileView'
 
 const Home = () => {
   const handleLogout = () => {
@@ -43,6 +44,7 @@ const Home = () => {
       <div className="feed-section">
         <Outlet />
       </div>
+      <MobileView />
     </div>
   )
 }

@@ -53,3 +53,72 @@
     font-size: 16px;
     font-weight: 700;
 }
+
+.mobile-view {
+    display: none;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.mobile-nav-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mobile-nav {
+    border: 1px solid;
+    border-radius: 50%;
+    padding: 12px 16px;
+}
+
+/* ////////////////mobile view////////////////// */
+
+@media only screen and (max-width: 500px) {
+
+    .fixed-side-container,
+    .end-section,
+    profile-content {
+        display: none;
+    }
+
+    .feed-section {
+        margin: 0;
+        width: 100% !important;
+    }
+
+    .profile-content {
+        margin: 18px;
+    }
+
+    .middle-section {
+        width: 100% !important;
+    }
+
+    .post-section .post {
+        width: 100% !important;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    .profile-detail-section {
+        max-width: 400px !important;
+    }
+
+    .profile-post img {
+        height: 180px !important;
+        width: 150px !important;
+    }
+
+    .profile-image {
+        height: 150px !important;
+        width: 150px !important;
+    }
+
+    .emoji {
+        display: none;
+    }
+}
