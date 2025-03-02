@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import logo from '../assets/instagram-logo-illustration.png'
 
 const Signup = () => {
   const [email, setEmail] = useState('')
@@ -15,7 +16,7 @@ const Signup = () => {
 
   return (
     <div className="signup-container">
-      <h2>Sign up</h2>
+      <img src={logo} alt="logo" />
       <form onSubmit={handleSignup}>
         <input
           type="email"
@@ -31,10 +32,15 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        <input type="tel" placeholder="your contact number" />
+        <input type="date" placeholder="your date of Birth" />
         <button type="submit">Sign up</button>
       </form>
+      <p>Sign-in to see what world has to serve. </p>
       <p>
-        Already have an account? <a href="/login">Login</a>
+        <span>
+          Already have an account? <a href="/login">Login</a>
+        </span>
       </p>
     </div>
   )

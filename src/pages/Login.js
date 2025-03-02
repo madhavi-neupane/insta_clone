@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './logSign.css'
+import logo from '../assets/instagram-logo-illustration.png'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -19,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <img src={logo} alt="logo" />
       <form onSubmit={handleLogin}>
         <input
           type="email"
@@ -39,9 +41,11 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
-
+      <p>Login to see new updates.</p>
       <p>
-        Don't have account ? <a href="/signup">Signup</a>
+        <span>
+          Don't have account ? <a href="/signup">Signup</a>
+        </span>
       </p>
     </div>
   )
