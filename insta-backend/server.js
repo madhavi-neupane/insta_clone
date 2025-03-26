@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 const cors = require('cors')
+const User = require('./models/Users')
 
 dotenv.config()
 const app = express()
@@ -20,8 +21,43 @@ app.get('/', (req, res) => {
   res.send('API is running...')
 })
 
+const authRoutes = require('./routes/Auth')
+app.use('/api/Auth', authRoutes)
+
+// testing route
+app.get('/test', (req, res) => {
+  res.json({ message: 'server is wroking !' })
+})
+
+app.post('/api/signup', (req, res) => {
+  const { username, email, password } = req.body
+
+  if (!username || !email || !password) {
+    return res.status(400).json({ error: 'all fields are required' })
+  }
+
+  return res
+    .status(201)
+    .json({ message: 'user created successfully!', user: { username, email } })
+})
+
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 
-const authRoutes = require('./routes/auth')
-app.use('/api/Auth', authRoutes)
+mongoose.connection.on('connected', async () => {
+  console.log('Connected to DB:', mongoose.connection.name)
+
+  const users = await User.find()
+  console.log('All users:', users)
+})
+
+mongoose
+  .connect(process.env.MONGO_URI, {
+    dbName: 'Insta-Clone-Backend',
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() =>
+    console.log('mongodb has been connected after crying for so long')
+  )
+  .catch(() => console.log('lu feri try gara vayena yo'))
