@@ -47,6 +47,12 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
 mongoose.connection.on('connected', async () => {
   console.log('Connected to DB:', mongoose.connection.name)
 
+  const collections = await mongoose.connection.db.listCollections().toArray()
+  console.log(
+    'collections:',
+    collections.map((c) => c.name)
+  )
+
   const users = await User.find()
   console.log('All users:', users)
 })
@@ -61,3 +67,5 @@ mongoose
     console.log('mongodb has been connected after crying for so long')
   )
   .catch(() => console.log('lu feri try gara vayena yo'))
+
+console.log('Loaded MONGO_URI:', process.env.MONGO_URI)
